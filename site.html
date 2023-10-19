@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <meta name="description" content="Technical Documentation">
+        <title id="title">HIP Peperklip generator</title>
+        <!--<link rel="stylesheet" href="styles.css">-->
+        <link rel="stylesheet" href="./site.css">
+    </head>
+    
+    <script>
+    //function submitAlert(){
+        //alert("Form submited");
+        //var voornaam = document.getElementById("voornaam-leerling").value
+        //var achternaam = document.getElementById("achternaam-leerling").value
+        //alert(voornaam + " " + achternaam)
+        //return false
+    //}
+    </script>
+    
+    <body>
+        <h1> Peperklip verslag generator</h1>
+        <fieldset class="instructions-section">
+            <p>
+                Vul hieronder de gevraagde informatie in voor het genereren van een Peperklip verslag. Deze zal binnen enkele minuten naar u gemaild worden op de email van uw vestiging of als uw vestiging niet in de lijst staat; op het door u opgegeven email adres. <br></p>
+
+<p><b>Gebruiksaanwijzing:</b> <br>
+                <div class="instruction-steps">
+Stap 1: vul hieronder alle gevraagde informatie in <br>
+Stap 2: U ontvangt het document in uw mailbox (indien dit na enkele minuten niet het geval is, controleer uw spam map).<br>
+Stap 3: Controleer het document op de volgende punten:
+                <ul>
+                    <li>Selecteer de kopjes van combi scores 'underlined' (cmd + u op mac)</li>
+                    <li>Controleer of het document netjes is (voeg zo nodig enters en/of pagina eindes in)</li>
+                    <li>Voeg de Peperklip score grafiek toe aan het einde van het document</li>
+                </ul> 
+Stap 4: Document exporteren als PDF, mailen naar ouders en toevoegen aan documenten in Homi.
+                </div>
+
+<br><br>Voor vragen en/of feedback kunt u mailen naar: Frisoderooij@hip.nl
+        </fieldset>
+            
+            
+        
+        <!--method="get" action="Script.json"-->
+        <form onsubmit="" action="" method="get">
+      <fieldset>
+          <h3>Persoonsgegevens</h3>
+        <label id="lfirst-name" for="first-name">Voornaam leerling: <input id="voornaam-leerling" name="voornaam-leerling" type="text" placeholder="Voornaam" required /></label>
+        <label id="llast-name" for="last-name">Achternaam leerling: <input id="achternaam-leerling" name="achternaam-leerling" type="text" placeholder="achternaam" required /></label>
+        <label for="datum">Datum van afname: <input id="datum" name="datum" type="date"/></label>
+        <label for="afname-door">Afgenomen door: <input id="afname-door" name="afname-door" type="text" placeholder="Voor + achternaam"/></label><br>
+          <label>Geslacht leerling:</label>
+          <label for="man"><input id="man" name="geslacht-leerling" type ="radio" class="inline" value="Man"/>Man</label>
+          <label for="vrouw"><input id="vrouw" name="geslacht-leerling" type ="radio" class="inline" value="Vrouw"/>Vrouw</label>
+          <label for="overig"><input id="overig" name="geslacht-leerling" type ="radio" class="inline" value="Overig"/>Overig</label>
+      </fieldset>
+            
+      <fieldset>
+        <h3>Vestiging</h3>
+        <label for="vestiging">Vestiging <select id="vestiging" name="vestiging">
+            <option value="">(Kies een vestiging)</option>
+            <option value="Baarn">Baarn</option>
+            <option value="Barneveld">Barneveld</option>
+            <option value="Bilthoven">Bilthoven</option>
+            <option value="Bussum">Bussum</option>
+            <option value="Driebergen">Driebergen</option>
+            <option value="Ede">Ede</option>
+        </select></label>
+      </fieldset>
+            
+      <fieldset>
+        <h3>Peperklip scores</h3>
+        <label for="score_visueel">Score visueel:<input id="score-visueel" type="number" name="score_visuel" min="0" max="20" placeholder="Score: 0-20"/></label>
+        <label for="score_auditief">Score auditief:<input id="score-auditief" type="number" name="score_auditief" min="0" max="20" placeholder="Score: 0-20"/></label>
+        <label for="score_tekstueel">Score tekstueel:<input id="score-tekstueel" type="number" name="score_textueel" min="0" max="20" placeholder="Score: 0-20"/></label>
+        <label for="score_samenleren">Score samen leren:<input id="score-samenleren" type="number" name="score_samenleren" min="0" max="20" placeholder="Score: 0-20"/></label>
+        <label for="score_planning">Score planning:<input id="score-planning" type="number" name="score_planning" min="0" max="20" placeholder="Score: 0-20"/></label>
+        <label for="score_beweging">Score beweging:<input id="score-beweging" type="number" name="score_beweging" min="0" max="20" placeholder="Score: 0-20"/></label>
+        <label for="grafiek">Upload hier de Peperklip grafiek: <input id="grafiek" type="file" name="grafiek"  accept="image/x-png" /></label> 
+      </fieldset>
+            
+      <input type="button" onclick="javascript:peperklipGenerator()" value="Genereer & download" />
+      <a href="javascript:peperklipGenerator();">Export PDF</a>      
+    </form>
+    <!-- plugins scripts-->
+    <script type="text/javascript" src="plugins/jspdf.js"></script>
+    <script type="text/javascript" src="plugins/filesaver.js"></script>
+    <script type="text/javascript" src="plugins/addhtml.js"></script>
+    <script type="text/javascript" src="plugins/addimage.js"></script>
+    <script type="text/javascript" src="plugins/from_html.js"></script>
+    <script type="text/javascript" src="plugins/html2canvas.js"></script>
+    <script type="text/javascript" src="plugins/imageloader.js"></script>
+    <script type="text/javascript" src="plugins/images.js"></script>
+    <script type="text/javascript" src="plugins/images_png.js"></script>
+    <script type="text/javascript" src="plugins/main.js"></script>
+    <script type="text/javascript" src="plugins/015_splittext.js"></script>
+    <script type="text/javascript" src="plugins/split_text_to_size.js"></script>
+    <script type="text/javascript" src="plugins/jspdf_autotable.js"></script>
+    <script type="text/javascript" src="plugins/jspdf.debug.js"></script>
+    
+    <!-- Processing scripts--> 
+    <script type="text/javascript" src="formImages.js"></script>   
+    <script type="text/javascript" src="peperklipGenerator.js"></script>
+    
+        
+    </body>
+</html>
