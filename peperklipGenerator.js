@@ -26,7 +26,8 @@ const imgLogo2 = fimg2();
 const imgLogo3 = fimg3();
 const imgLogo4 = fimg4();
 const ulPage2  = fimg5();
-const scoreGraph = document.getElementById('grafiek').value
+var scoreGraph = document.getElementById('grafiek').value;
+    console.log(scoreGraph);
 
 
 // temporary development variables.   
