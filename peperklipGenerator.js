@@ -538,7 +538,7 @@ var lastLine = 26
       img.src = dataURL;
     });
   }
-    
+ convertAndDisplay();   
     
 // Closing line -> saving file file to user's desktop
 doc.save("Peperklip verslag "+voornaam_leerling+" "+ achternaam_leerling +".pdf")
