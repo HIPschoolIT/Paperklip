@@ -12,7 +12,7 @@ const afgenomen_door = document.getElementById('afname-door').value;
 const geslacht_leerling = document.querySelector('input[name="geslacht-leerling"]:checked').value;
 const vestiging = document.getElementById('vestiging').value;
     //Scores
-const score_visueel = document.getElemntById('score-visueel').value;
+const score_visueel = document.getElementById('score-visueel').value;
 const score_auditief = document.getElementById('score-auditief').value;
 const score_tekstueel = document.getElementById('score-tekstueel').value;
 const score_samen_leren = document.getElementById('score-samenleren').value;
