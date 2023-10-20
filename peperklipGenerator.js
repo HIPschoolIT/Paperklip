@@ -505,105 +505,39 @@ var lastLine = 26
     
     
     
- //---------------------Final Page (appendix)----------------------   
+  //---------------------Final Page (appendix)----------------------   
  doc.addPage();
     doc.setTextColor(5,20,78).setFontSize(15).setFont('arial','bold');
     doc.addImage(imgLogo1,'jpg',13.77,26.78,5.29,3.5);
         //page contents
     doc.text(("Bijlage scores "+voor_achternaam),margin_left_H1,5).setTextColor(5,20,78).setFontSize(11).setFont('arial','normal');   
-    //doc.text(scoreGraph,margin_left, 10);
     
-   //scoreGraph = URL.createObjectURL(scoreGraph);
-  function convertImageToDataURL(filePath, callback) {
-    var img = new Image();
-    img.onload = function() {
-      var canvas = document.createElement('canvas');
-      canvas.width = this.width;
-      canvas.height = this.height;
-      var ctx = canvas.getContext('2d');
-      ctx.drawImage(this, 0, 0);
-      var dataURL = canvas.toDataURL('image/png');
-      callback(dataURL);
-    };
-    img.src = filePath;
+    //convert image to base64 and adding it to the document
+var inputse = document.getElementById("grafiek");
+var fReader = new FileReader();
+ function getBase64(file) {
+    myPromise = new Promise(function(resolve) {
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        resolve(reader.result)
+      }
+      reader.readAsDataURL(file);
+    })
   }
-
-  function convertAndDisplay() {
-    const scoreGraph = document.getElementById('grafiek').value;
-      console.log("File path:", scoreGraph);
-    convertImageToDataURL(scoreGraph, function(dataURL) {
-      console.log(dataURL); // Print the data URL
-      var img = document.getElementById('image');
-      console.log("Setting image source...");
-      img.src = dataURL;
-    });
-  }
- convertAndDisplay();   
+ getBase64(inputse.files[0]);
+const img = new Image()
+var imageBase = "";
+ myPromise.then((result) => {
+  //console.log(result);
+  img.src = result;
+});
     
-// Closing line -> saving file file to user's desktop
-doc.save("Peperklip verslag "+voornaam_leerling+" "+ achternaam_leerling +".pdf")
+img.onload = () => {
+  // await for the image to be fully loaded
+  doc.addImage(img,'png',2.5,5,10,10);
+  
+  //...
+  // Closing line -> saving file file to user's desktop
+  doc.save("Peperklip verslag "+voornaam_leerling+" "+ achternaam_leerling +".pdf")
+};
 }
-
-
-
-    /*-----testing ground for achieving goals as presented below for personalized section.----------------*/
-    //var testtext = 'This is a text without real content but with 59 characters. In dit hoofdstuk wordt een kort advies gegeven aan de hand van de scores van In dit hoofdstuk wordt een kort '
-    //var lineHeight = doc.getLineHeight(testtext) / doc.internal.scaleFactor
-    //var splittedText = doc.splitTextToSize(testtext, 16)
-    //var lines = splittedText.length
-    //var blockHeight = lines * lineHeight
-    //doc.text(margin_left,8, splittedText)
-    //console.log(lines)
-    //console.log(blockHeight)
-    //console.log(lineHeight)
-    
-    
-    
-//---------------------Inspiration area----------------------
-    
-    //Very usefull link to count lines (and used above): https://stackoverflow.com/questions/41979037/getting-the-current-x-y-position-when-adding-contents-to-jspdf
-    //(potentially) Usefull for converting input graph image to imgURL: https://pqina.nl/blog/convert-an-image-to-a-base64-string-with-javascript/
-    /*
-    - wrap text
-    - Calculate start position (in cm)
-    - if pos > margin -> function overflowNewPage(){add page, page setup routine, start from top margin 5 cm, calculate/acces remaining lines to add }
-    */
-    /*
-    Use formula to calculate needed rows, calculate beginning position, update current row
-    if rows needed for new alinea exceeds remaining space, continue on new page.
-    */
-    
-    
-    
-    
- /*   //---------------------testing area----------------------
-doc.addPage()
-doc.setDrawColor('black');
-doc.setLineWidth(1/72);
-doc.line(0.5,0.5,0.5,11.25);
-doc.line(7.75, 0.5, 7.75, 11.25);
-
-//textlines = doc.setFont('Arial').setFontSize('12').splitTextToSize('imgLogo', 7.25);
-//let verticalOffset = 0.5;
-    //doc.text(0.5, verticalOffset +12/72,textlines)
-    //verticalOffset +=(textlines.length + 0.5)*12/72;
-//imgLogo = doc.splitTextToSize(imgLogo,5)
-doc.text(0.5,0.5,doc.splitTextToSize(imgLogo,16));
-*/
-    
-/*doc.text("Achternaam leerling: " + achternaam_leerling,10,30);
-doc.text("Volledige naam: "+ voor_achternaam,10,40);
-doc.text("Datum afname: "+ datum_afname,10,50);
-doc.text("Afgenomen door: "+afgenomen_door,10,60);
-doc.text("Geslacht leerling: " + geslacht_leerling,10,70);
-doc.text("Vestiging: "+ vestiging,10,80)
-doc.text("Score visueel: "+score_visueel,10,90)
-doc.text("Score auditief: "+score_auditief,10,100)
-doc.text("Score tekstueel: "+score_tekstueel,10,110)
-doc.text("Score samen leren: "+score_samen_leren,10,120)
-doc.text("Score planning: "+score_planning,10,130)
-doc.text("Score beweging: "+score_beweging,10,140)
-doc.text("Hij/zij: "+hz,10,150);
-doc.text("Zijn/haar: "+zh,10,160);*/
-
-
