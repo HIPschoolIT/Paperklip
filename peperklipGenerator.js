@@ -10,14 +10,14 @@ const voor_achternaam = voornaam_leerling +" " + achternaam_leerling;
 const datum_afname = document.getElementById('datum').value.split("-").reverse().join("-");
 const afgenomen_door = document.getElementById('afname-door').value;
 const geslacht_leerling = document.querySelector('input[name="geslacht-leerling"]:checked').value;
-const vestiging = document.getElementById('vestiging').value
+const vestiging = document.getElementById('vestiging').value;
     //Scores
-const score_visueel = document.getElemntById('score-visueel').value
-const score_auditief = document.getElementById('score-auditief').value
-const score_tekstueel = document.getElementById('score-tekstueel').value
-const score_samen_leren = document.getElementById('score-samenleren').value
-const score_planning = document.getElementById('score-planning').value
-const score_beweging = document.getElementById('score-beweging').value*/
+const score_visueel = document.getElemntById('score-visueel').value;
+const score_auditief = document.getElementById('score-auditief').value;
+const score_tekstueel = document.getElementById('score-tekstueel').value;
+const score_samen_leren = document.getElementById('score-samenleren').value;
+const score_planning = document.getElementById('score-planning').value;
+const score_beweging = document.getElementById('score-beweging').value;
     
 //image data
 const imgLogo1 = fimg1();
@@ -29,7 +29,7 @@ var scoreGraph = document.getElementById('grafiek').value;
 
 
 /*
-// development variables.   
+// development variables activate for maintenance.   
 const voornaam_leerling = "Friso";
 const achternaam_leerling = "de Rooij";
 const voor_achternaam = voornaam_leerling +" " + achternaam_leerling;  
@@ -46,11 +46,11 @@ const score_beweging = Math.random()*20;
 
 //verwerking geslacht variabelen
   if(geslacht_leerling == "Man"){
-  var hz = "hij"
-  var zh = "zijn"
+  var hz = "hij";
+  var zh = "zijn";
  }else{
-  var hz = "zij"
-  var zh = "haar"
+  var hz = "zij";
+  var zh = "haar";
  }
 
 
@@ -63,8 +63,8 @@ var margin_top = 5;
 var line_distance = 1.15;
     
 // personalized section variables
-var yPos = 5
-var lastLine = 26
+var yPos = 5;
+var lastLine = 26;
 //add info
     //---------------------first page (frontpage)----------------------
     doc.addImage(imgLogo2, 'jpg', 4.59,4.32,11.8,7.88);
