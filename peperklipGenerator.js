@@ -8,7 +8,7 @@ const voornaam_leerling = document.getElementById('voornaam-leerling').value;
 const achternaam_leerling = document.getElementById('achternaam-leerling').value;
 const voor_achternaam = voornaam_leerling +" " + achternaam_leerling;  
 const datum_afname = document.getElementById('datum').value.split("-").reverse().join("-");
-const afgenomen_door = document.getElementById('afname-door').value;*/
+const afgenomen_door = document.getElementById('afname-door').value;
 const geslacht_leerling = document.querySelector('input[name="geslacht-leerling"]:checked').value;
 const vestiging = document.getElementById('vestiging').value
     //Scores
