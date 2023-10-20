@@ -505,7 +505,7 @@ var lastLine = 26
     
     
     
-  //---------------------Final Page (appendix)----------------------   
+ //---------------------Final Page (appendix)----------------------   
  doc.addPage();
     doc.setTextColor(5,20,78).setFontSize(15).setFont('arial','bold');
     doc.addImage(imgLogo1,'jpg',13.77,26.78,5.29,3.5);
@@ -534,7 +534,10 @@ var imageBase = "";
     
 img.onload = () => {
   // await for the image to be fully loaded
-  doc.addImage(img,'png',2.5,5,10,10);
+    var contrast = 19.84375/9.2604166667
+    var graphWidth = 15
+    var graphHeight = 15/contrast
+  doc.addImage(img,'png',2.5,5.5,graphWidth,graphHeight);
   
   //...
   // Closing line -> saving file file to user's desktop
