@@ -2,15 +2,14 @@
 
 function peperklipGenerator(){
 
-//Opslaan van Enquête data in variabelen:
-    //Gegevens
-/*const voornaam_leerling = document.getElementById('voornaam-leerling').value;
+//Fetching form data:
+    //Persona
+const voornaam_leerling = document.getElementById('voornaam-leerling').value;
 const achternaam_leerling = document.getElementById('achternaam-leerling').value;
 const voor_achternaam = voornaam_leerling +" " + achternaam_leerling;  
 const datum_afname = document.getElementById('datum').value.split("-").reverse().join("-");
 const afgenomen_door = document.getElementById('afname-door').value;*/
-
-/*const geslacht_leerling = document.querySelector('input[name="geslacht-leerling"]:checked').value;
+const geslacht_leerling = document.querySelector('input[name="geslacht-leerling"]:checked').value;
 const vestiging = document.getElementById('vestiging').value
     //Scores
 const score_visueel = document.getElemntById('score-visueel').value
@@ -27,10 +26,10 @@ const imgLogo3 = fimg3();
 const imgLogo4 = fimg4();
 const ulPage2  = fimg5();
 var scoreGraph = document.getElementById('grafiek').value;
-    console.log(scoreGraph);
 
 
-// temporary development variables.   
+/*
+// development variables.   
 const voornaam_leerling = "Friso";
 const achternaam_leerling = "de Rooij";
 const voor_achternaam = voornaam_leerling +" " + achternaam_leerling;  
@@ -42,7 +41,8 @@ const score_auditief = Math.random()*20;
 const score_tekstueel = Math.random()*20;
 const score_samen_leren = Math.random()*20;
 const score_planning = Math.random()*20;
-const score_beweging = Math.random()*20;
+const score_beweging = Math.random()*20; 
+*/
 
 //verwerking geslacht variabelen
   if(geslacht_leerling == "Man"){
