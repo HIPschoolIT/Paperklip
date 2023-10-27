@@ -2,10 +2,39 @@
 
 function peperklipGenerator(){
 
+// capitalization functions
+        function firstCapitalizer(word){
+        word = word.split("");
+        capWord = ""
+        word[0] = word[0].toUpperCase();
+        for (let i = 0; i<word.length; i++){
+            capWord += word[i]
+        }
+        return (capWord)
+    }
+    
+    function lastCapitalizer(lastName){
+        let wordcounter= lastName.split(" ")
+        wordcounter = wordcounter.length
+        
+        if (wordcounter==1){
+            return firstCapitalizer(lastName)
+        }else{
+            let last = lastName.split(" ")
+            last.push(firstCapitalizer(last.pop()))
+            let capLast = "";
+            for (let i = 0; i<last.length; i++){
+                capLast+=last[i] + " "
+            }
+            return capLast
+        }
+    }
+    
+
 //Fetching form data:
     //Persona
-const voornaam_leerling =   document.getElementById('voornaam-leerling').value;
-const achternaam_leerling = document.getElementById('achternaam-leerling').value;
+const voornaam_leerling =   firstCapitalizer(document.getElementById('voornaam-leerling').value);
+const achternaam_leerling = lastCapitalizer(document.getElementById('achternaam-leerling').value);
 const voor_achternaam =     voornaam_leerling + " " + achternaam_leerling;  
 const datum_afname =        document.getElementById('datum').value.split("-").reverse().join("-");
 const afgenomen_door =      document.getElementById('afname-door').value;
