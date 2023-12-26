@@ -6,40 +6,50 @@
         <meta name="description" content="Technical Documentation">
         <title id="title">HIP Peperklip generator</title>
         <!--<link rel="stylesheet" href="styles.css">-->
-        <link rel="stylesheet" href="./site.css">
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="plugins/ArchivoBlack-Regular.ttf">
         
     </head>
     
-    <script>
-    //function submitAlert(){
-        //alert("Form submited");
-        //var voornaam = document.getElementById("voornaam-leerling").value
-        //var achternaam = document.getElementById("achternaam-leerling").value
-        //alert(voornaam + " " + achternaam)
-        //return false
-    //}
-    </script>
-    
     <body>
-        <h1> Peperklip verslag generator</h1>
+     <header id="header" class="header">
+      <nav class="navbar">
+       <div class="container">
+          <a class="navbar-logo" href="https://hip.nl/" rel="home">
+           <img width="157" height="79" alt="HIP" class="img-fluid logoImg" style="height: 65px"; src="./logo.svg">
+           </a>
+       </div>
+      </nav>    
+    </header>
+    
+    <main class="main">
+        <section class="page-header">
+            <img class="basic-header" src="2020134-HIP_basis-headers-website-kleurvlak_Hoofdkantoor_A.jpg">
+            <h1 class="header-text">PEPERKLIP GENERATOR</h1>
+        </section>
+        
+        
+        
+        <section class="form-contents"> 
+          <h1> Gebruiksaanwijzing</h1>
         <fieldset class="instructions-section">
-            <p>
-                Vul hieronder de gevraagde informatie in voor het genereren van een Peperklip verslag. Deze zal binnen enkele minuten naar u gemaild worden op de email van uw vestiging of als uw vestiging niet in de lijst staat; op het door u opgegeven email adres. <br></p>
+            <p>Beste collega, na het afnemen van de Peperklip test kunt u deze tool gebruiken om het uitgebreide peperklip verslag te genereren. Indien u het formulier correct ingevuld heeft, zal het bestand automatisch naar uw computer gedownload worden. <br><br>
+            Let op: gegenereerde verslagen worden niet door deze tool bewaard. <br><br></p>
 
-<p><b>Gebruiksaanwijzing:</b> <br>
+            <h3 class="h3h"><b>Stap-voor-stap uitleg:</b></h3>
+            <p>
                 <div class="instruction-steps">
-Stap 1: vul hieronder alle gevraagde informatie in <br>
-Stap 2: U ontvangt het document in uw mailbox (indien dit na enkele minuten niet het geval is, controleer uw spam map).<br>
-Stap 3: Controleer het document op de volgende punten:
-                <ul>
-                    <li>Selecteer de kopjes van combi scores 'underlined' (cmd + u op mac)</li>
-                    <li>Controleer of het document netjes is (voeg zo nodig enters en/of pagina eindes in)</li>
-                    <li>Voeg de Peperklip score grafiek toe aan het einde van het document</li>
-                </ul> 
-Stap 4: Document exporteren als PDF, mailen naar ouders en toevoegen aan documenten in Homi.
+                    <u>Stap 1:</u> Neem de <a href="https://hip.peperklip.nl">Peperklip test</a> af met uw leerling. <br>
+<u>Stap 2:</u> Klik op "download grafiek" in het resultatenscherm. <br>
+<u>Stap 3:</u> vul hieronder alle gevraagde informatie in. <br>
+<u>Stap 4:</u> Upload de gedownloade Peperklip grafiek.<br>
+<u>Stap 5:</u> Klick op "Genereer & Download", het verslag wordt nu automatisch gedownload op uw computer. Indien dit niet het geval is, controleer of u het formulier correct heeft ingevuld. <br>
+<u>Stap 6:</u> Controleer het bestand op mogelijke fouten. <br>
+<u>Stap 7:</u> Mail het Peperklip verslag naar de ouders en voeg het toe aan het leerlingdossier in Homi.
+    
                 </div>
 
-<br><br>Voor vragen en/of feedback kunt u mailen naar: Frisoderooij@hip.nl
+            <br>Voor vragen en/of feedback kunt u mailen naar: <a href="mailto:frisoderooij@hip.nl">Frisoderooij@hip.nl</a>
         </fieldset>
             
             
@@ -47,7 +57,7 @@ Stap 4: Document exporteren als PDF, mailen naar ouders en toevoegen aan documen
         <!--method="get" action="Script.json"-->
         <form onsubmit="" action="" method="get">
       <fieldset>
-          <h3>Persoonsgegevens</h3>
+          <h3 class="h3h">Algemene informatie</h3>
         <label id="lfirst-name" for="first-name">Voornaam leerling: <input id="voornaam-leerling" name="voornaam-leerling" type="text" placeholder="Voornaam" required /></label>
         <label id="llast-name" for="last-name">Achternaam leerling: <input id="achternaam-leerling" name="achternaam-leerling" type="text" placeholder="achternaam" required /></label>
         <label for="datum">Datum van afname: <input id="datum" name="datum" type="date"/></label>
@@ -59,20 +69,7 @@ Stap 4: Document exporteren als PDF, mailen naar ouders en toevoegen aan documen
       </fieldset>
             
       <fieldset>
-        <h3>Vestiging</h3>
-        <label for="vestiging">Vestiging <select id="vestiging" name="vestiging">
-            <option value="">(Kies een vestiging)</option>
-            <option value="Baarn">Baarn</option>
-            <option value="Barneveld">Barneveld</option>
-            <option value="Bilthoven">Bilthoven</option>
-            <option value="Bussum">Bussum</option>
-            <option value="Driebergen">Driebergen</option>
-            <option value="Ede">Ede</option>
-        </select></label>
-      </fieldset>
-            
-      <fieldset>
-        <h3>Peperklip scores</h3>
+        <h3 class="h3h">Peperklip scores</h3>
         <label for="score_visueel">Score visueel:<input id="score-visueel" type="number" name="score_visuel" min="0" max="20" placeholder="Score: 0-20"/></label>
         <label for="score_auditief">Score auditief:<input id="score-auditief" type="number" name="score_auditief" min="0" max="20" placeholder="Score: 0-20"/></label>
         <label for="score_tekstueel">Score tekstueel:<input id="score-tekstueel" type="number" name="score_textueel" min="0" max="20" placeholder="Score: 0-20"/></label>
@@ -81,10 +78,13 @@ Stap 4: Document exporteren als PDF, mailen naar ouders en toevoegen aan documen
         <label for="score_beweging">Score beweging:<input id="score-beweging" type="number" name="score_beweging" min="0" max="20" placeholder="Score: 0-20"/></label>
         <label for="grafiek">Upload hier de Peperklip grafiek: <input id="grafiek" type="file" name="grafiek"  accept="image/x-png" /></label> 
       </fieldset>
-            
-      <input type="button" onclick="javascript:peperklipGenerator()" value="Genereer & download" />
-      <!--<a href="javascript:peperklipGenerator();">Export PDF</a>   -->    
+        <fieldset>
+      <input class="submitbutton" type="button" onclick="javascript:peperklipGenerator()" value="Genereer & download"/>
+            </fieldset>
     </form>
+        </section>
+    </main>
+        
     <!-- plugins scripts-->
     <script type="text/javascript" src="./jspdf.js"></script>
     <script type="text/javascript" src="./filesaver.js"></script>
