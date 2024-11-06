@@ -39,7 +39,7 @@ const voor_achternaam =     voornaam_leerling + " " + achternaam_leerling;
 const datum_afname =        document.getElementById('datum').value.split("-").reverse().join("-");
 const afgenomen_door =      document.getElementById('afname-door').value;
 const geslacht_leerling =   document.querySelector('input[name="geslacht-leerling"]:checked').value;
-const vestiging =           document.getElementById('vestiging').value;
+//const vestiging =           document.getElementById('vestiging').value;
     //Scores
 const score_visueel =     document.getElementById('score-visueel').value;
 const score_auditief =    document.getElementById('score-auditief').value;
